@@ -1,0 +1,40 @@
+{
+  "name": "monoql",
+  "version": "0.0.0",
+  "description": "A tiny client-side library for working with GraphQL",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "preversion": "npm test",
+    "version": "npm run build",
+    "postversion": "git push origin master && git push origin master --tags",
+    "clean": "rm -rf dist/",
+    "build": "tsc",
+    "watch": "npm run build -- --watch",
+    "test": "mocha",
+    "tdd": "npm run watch | npm run test -- --watch",
+    "prepublish": "npm run clean && npm run build && npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helpfulhuman/monoql.git"
+  },
+  "keywords": [
+    "graphql",
+    "client",
+    "ajax",
+    "xhr"
+  ],
+  "author": "Nick Glenn <nick@helpfulhuman.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/helpfulhuman/monoql/issues"
+  },
+  "homepage": "https://github.com/helpfulhuman/monoql#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^3.5.3",
+    "sinon": "^4.0.0",
+    "typescript": "^2.5.3"
+  }
+}
